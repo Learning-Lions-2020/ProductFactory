@@ -22,5 +22,6 @@ public class Furniture : IProduct
         Console.WriteLine($"Furniture: {item}");
         Console.WriteLine($"Material: {material}");
         Console.WriteLine($"Price: KES{price:F2}");
+        Console.WriteLine($"Description: {description}");
     }
 }

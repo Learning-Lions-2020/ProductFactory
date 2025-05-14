@@ -20,5 +20,6 @@
         Console.WriteLine($"Clothing: {type}");
         Console.WriteLine($"Size: {size}");
         Console.WriteLine($"Price: KES{price:F2}");
+        Console.WriteLine($"Description: {description}");
     }
 }
