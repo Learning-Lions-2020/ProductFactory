@@ -1,6 +1,4 @@
-﻿using System;
-
-public class Furniture : IProduct
+﻿public class Furniture : IProduct
 {
     private string item;
     private string material;
