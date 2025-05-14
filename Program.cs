@@ -1,15 +1,18 @@
 ﻿using ProductFactory;
 
-// Defined method to execute when a product is created
-ProductCreated<IProduct> onProductCreated = (product) =>
+var factory = new ProductFactory.ProductFactory();
+
+
+// Define the method to execute when a product is created
+void OnProductCreated(object sender, ProductEventArgs e)
 {
     Console.WriteLine("Custom Product Information:");
-    product.ShowInfo();
-    Console.WriteLine($"Description has {product.Description.CountVowels()} vowels.");
-};
+    e.Product.ShowInfo();
+    Console.WriteLine($"Description has {e.Product.Description.CountVowels()} vowels.");
+}
 
-// ProductFactory instance with the delegate
-var factory = new ProductFactory.ProductFactory(onProductCreated);
+//
+factory.productCreatedEvent += OnProductCreated;
 
 Console.WriteLine("Creating Clothing Product:");
 var clothing = factory.CreateProduct<Clothing>("T-Shirt", "Medium", 1199.99, "A comfortable cotton T-shirt with a classic fit");
